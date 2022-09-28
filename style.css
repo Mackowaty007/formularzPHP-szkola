@@ -1,0 +1,32 @@
+.error {color: #FF0000;}
+body {
+    background: #08ffb1;
+}
+.main {
+    border-style:dashed;
+    background: hsl(129, 100%, 61%);
+}
+.daneOsobowe{
+    border-style:double;
+    padding: 50px;
+    margin: 10px;
+    background: #6acc6d;
+}
+.typUcznia{
+    border-style:double;
+    padding: 50px;
+    margin: 10px;
+    background: rgb(169, 255, 178)
+}
+.zainteresowania{
+    border-style:double;
+    padding: 50px;
+    margin: 10px;
+    background:rgb(26, 154, 233)
+}
+.rok{
+    border-style:double;
+    padding: 50px;
+    margin: 10px;
+    background:rgb(54, 117, 156)
+}

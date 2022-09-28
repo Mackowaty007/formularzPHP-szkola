@@ -1,0 +1,42 @@
+
+<!DOCTYPE HTML>  
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+
+<div class="main">
+  <h2>Karta ucznia:</h2>
+  <p><span class="error">* required field</span></p>
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>
+    <div class="daneOsobowe">
+      Imie: <input type="text" name="imie">
+      nazwisko: <input type="text" name="nazwisko">
+      klasa: <input type="tedxt" name="kalsa">
+    </div>
+    <div class="typUcznia">
+      Jestem uczniem:
+      <br>
+      <input type="radio" name="zawod" value="informatyk">Technik Informatyk
+      <input type="radio" name="zawod" value="fotograf">Techink Fotografi
+      <input type="radio" name="zawod" value="weterynarz">Technik weterynarii    
+    </div>
+    <div class="zainteresowania">
+      Zainteresowania:
+      <br>
+      <input type="radio" name="interest" value="noga">Pilka nozna
+      <input type="radio" name="interest" value="gry">Gry wideo
+      <input type="radio" name="interest" value="inne">inne  
+    </div>
+    <div class="rok">
+      Rok
+      <input type="number" name="rok" min="1" max="5" step="1" value="1">
+      <br><br>
+      <input type="submit" name="submit" value="Submit">  
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
