@@ -1,4 +1,3 @@
-<?php include 'connect.php';?>
 <!DOCTYPE HTML>  
 <meta charset="utf-8">
 <html>
@@ -12,7 +11,9 @@
 </div>
 <div class="userData">
 <h2>Aktualne pozycje z bazy danych</h2>
-<?php
+<?php 
+	include 'connect.php';
+
 	echo "<ol>";
 	$result = $mysqli->query("SELECT * FROM informacje");
 
@@ -32,7 +33,7 @@
 
 <div class="main">
 	<h2>Karta ucznia:</h2>
-	<form method="post"  action="form.php">
+	<form method="POST"  action="<?php echo $_SERVER['PHP_SELF'];?>">
 		<div class="dane">
 		Email: <br><input type="text" name="email"><br>
 		Chaslo: <br><input type="text" name="password"><br>
@@ -40,6 +41,11 @@
 		<input type="submit" name="submit" value="Dodaj pozycje">  
 		</div>
 	</form>
+	<div class="errorMessage">
+	<?php
+		include 'form.php';
+	?>
+	</div>
 </div>
 
 
@@ -48,11 +54,5 @@
 		<a href="https://github.com/Mackowaty007" class="item">Kontakt</a>		
 	</div>
 </footer>
-<script>
-		$(document).ready(function(){
-			$('.checkbox').checkbox();
-		});
-		$('.sticky').sticky();
-</script>
 </body>
 </html>
