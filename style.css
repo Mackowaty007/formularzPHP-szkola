@@ -17,20 +17,25 @@ footer{
 
 .userData{
 	margin-top:40px;
+	margin-left:30%;
+	margin-right:30%;
 	padding:10px;
 	background-color:rgb(62, 112, 204);
+	border-style:dotted;
 }
 
 .main {
 	margin-top:10px;
 	margin-bottom: 20px;
+	margin-left:30%;
+	margin-right:30%;
 	padding:100px;
 	text-align: center;
-    border-style:dashed;
+    border-style:dotted;
     background: rgb(62, 112, 204);
 }
 .daneOsobowe{
-    border-style:double;
+    border-style:dotted;
     padding: 50px;
     margin: 10px;
 }

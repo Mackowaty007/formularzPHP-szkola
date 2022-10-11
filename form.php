@@ -1,7 +1,11 @@
 <?php
+include 'connect.php';
 $email = '';
 $password = '';
 $terms = '';
+$errorEmail = '';
+$errorPassword = '';
+$errorTerms = '';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -38,7 +42,6 @@ if ( ! $errorEmail && ! $errorPassword && ! $errorTerms ) {
   echo $terms;
   echo "<br>";
   $query = $mysqli->query("INSERT INTO `informacje` (`ID`, `email`, `password`, `terms`) VALUES (NULL, '$email', '$password', '$terms');");
-  echo "it worked!";
   /*
   $query = bind_param("ss",$email, $password);
   echo "works so far????";
@@ -58,6 +61,6 @@ if ( ! $errorEmail && ! $errorPassword && ! $errorTerms ) {
   }
 }
 
-//header('Location:index.php');
+header('Location:index.php');
 
 ?>
