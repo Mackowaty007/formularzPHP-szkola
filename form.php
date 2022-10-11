@@ -1,16 +1,4 @@
 <?php
-$dbServer = 'localhost';
-$dbUser = 'root';
-$dbPassword = '';
-$dbName = 'zadanieDomowe';
-
-$mysqli = new mysqli($dbServer,$dbUser,$dbPassword,$dbName);
-$mysqli->set_charset("utf8");
-if ( mysqli_connect_errno() ) {
-	echo 'Błąd bazy danych';
-}
-echo "baza danych sie poloczyla!<br>";
-
 $email = '';
 $password = '';
 $terms = '';
@@ -29,14 +17,17 @@ if ( ! $email ) {
 	echo 'Uzupełnij pole email';
 } elseif ( $email && ! filter_var($email, FILTER_VALIDATE_EMAIL) ) {
 	echo 'Upewnij się, że adres email ma prawidłowy format';
+  $errorEmail = "error email!!";
 }
 if ( ! $password ) {
 	echo 'Uzupełnij pole hasło';
 } elseif ( $password && strlen($password) < 6 ) {
 	echo 'Hasło musi zawierać minimum 6 znaków';
+  $errorPassword = "error password!!";
 }
 if ( $terms  != 'on' ) {
 	echo 'Musisz zaakceptować regulamin';
+  $errorTerms = "error terms!!";
 }
 /* wysylamy informacje do bazy danych */
 if ( ! $errorEmail && ! $errorPassword && ! $errorTerms ) {
@@ -47,35 +38,13 @@ if ( ! $errorEmail && ! $errorPassword && ! $errorTerms ) {
   echo $terms;
   echo "<br>";
   $query = $mysqli->query("INSERT INTO `informacje` (`ID`, `email`, `password`, `terms`) VALUES (NULL, '$email', '$password', '$terms');");
-  /*echo "works so far!";
+  /*
   $query = bind_param("ss",$email, $password);
   echo "works so far????";
   $query->execute();
   $query->close();*/
-
-  $result = $mysqli->query("SELECT * FROM informacje");
-
-  while ( $wynik = mysqli_fetch_array($result) ) {
-   echo $wynik['email'];
-   echo "<br>";
-   echo $wynik['password'];
-   echo "<br>";
-   echo $wynik['terms'];
-   echo "<br><br>";
- }
 }
 
-
+header('Location:index.php');
 
 ?>
-
-<!DOCTYPE HTML>  
-<meta charset="utf-8">
-<html>
-<head>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-</body>
-</html>
