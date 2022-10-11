@@ -18,13 +18,13 @@ echo "<ol>";
 
   while ( $wynik = mysqli_fetch_array($result) ) {
   echo "<li>";
-   echo $wynik['email'];
-   echo "<br>";
-   echo $wynik['password'];
-   echo "<br>";
-   echo $wynik['terms'];
-   echo "</li>";
-   echo "<br><br>";
+    echo $wynik['email'];
+    echo "<br>";
+    echo $wynik['password'];
+    echo "<br>";
+    echo $wynik['terms'];
+    echo "</li>";
+    echo "<br><br>";
 }
 echo "</ol>";
 ?>
