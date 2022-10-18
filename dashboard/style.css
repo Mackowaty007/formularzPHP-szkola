@@ -1,0 +1,17 @@
+body {
+    background: red;
+}
+header{
+	position:fixed;
+	left:0;
+	top:0;
+	width: 100%;
+	background-color: cornflowerblue;
+}
+table{
+	background-color: black;
+	text-align: center;
+}
+.errorMessage{
+	color:rgb(255, 0, 0);
+}
